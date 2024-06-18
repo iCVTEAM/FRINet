@@ -122,7 +122,7 @@ def train(Dataset, Network):
     for epoch in range(cfg.epoch):
         net.train()
 
-        for step, (image, hf, mask,_) in enumerate(loader):
+        for step, (image, RFC, mask,_) in enumerate(loader):
             image, RFC, mask = image.float().cuda(),  RFC.float().cuda(),mask.float().cuda() 
             optimizer.zero_grad()      
             scheduler(optimizer,step,epoch)
